@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{
+background-color:lightyellow;
+}
+h1{color:#770080;
+font-style:italic;
+font_family:courier New;
+text-align:center;
+}
+#result{
+color:#770080;
+font-weight:bold;
+}</style>
+</head>
+<body>
+<h1>College Training Feedback Form</h1>
+<form onsubmit="return result()">
+Participant Name<input type="text" name="participationName" id="pname" placeholder="Enter Your name"><br>
+
+College Name<input type="text" name="collegeName"><br>
+Participant Address<textarea name="partcipantAddress" rows="5" cols="20"></textarea>
+Gender<input type="radio" name="gender" value="male">Male
+<input type="radio" name="gender" value="female">Female<br>
+Email ID<input type="email" name="email"><br>
+Mobile Number<input type="text" name="mobileNumber"><br>
+Trainer's Name<input type="text" name="trainerName" id="tname"><br>
+Course Name<input type="text" name="courseName"><br>
+Course Completion date<input type="date" name="dateofcompletion"><br>
+Trainer's feedback<input type="text" id="fd" name="trainerFeedback" list="feedback">
+<datalist id="feedback">
+<option>Excellent</option>
+<option>Very Good</option>
+<option>Good</option>
+<option>Average</option>
+<option>Below Average</option>
+</datalist>
+<br>
+<input type="submit" name="submit Feedback" onclick="return result();">
+<input type="reset" name="Reset" value="Clear">
+</form>
+<Script>
+function result()
+{
+	var a=document.getElementById('tname').value;
+	var z=document.getElementByid('fd').value;
+	var b;
+	switch(z)
+	{
+	case 'Excellent':b=5; break;
+	case 'Very Good':b=4; break;
+	caser 'Good':b=3;break;
+	case 'Average':b=2;break;
+	case 'Below Average':b=1;break;
+	
+	}
+	var d=document.getElementsById('pname').value;
+	document.getElementsById('result').innerHTML='Feedback rating of'+a+'is'+b+ /5.Given by participant -'+d;
+	return false;
+	}</Script>
+</body>
+</html>
